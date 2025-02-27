@@ -25,14 +25,14 @@ class Crear {
                 nombre = lineSplit[0];
                 numero = Long.parseLong(lineSplit[1]);
                 
-                if (nombre == nuevoNombre || numero == nuevoNumero) {
+                if (nombre.equals(nuevoNombre) || numero == nuevoNumero) {
                     duplicado = true;
                     break;
                 }
             }
             
-            if (duplicado == false) {
-                lineaTexto = nuevoNombre + "-" + String.valueOf(nuevoNumero);
+            if (!duplicado) {
+                lineaTexto = nuevoNombre + "-" + nuevoNumero;
                 txt.writeBytes(lineaTexto);
                 txt.writeBytes(System.lineSeparator());
                 resultado = "El usuario " + nuevoNombre + ", con identificacion " + nuevoNumero + " fue registrado con exito";
@@ -52,3 +52,4 @@ class Crear {
         }
     }
 }
+
